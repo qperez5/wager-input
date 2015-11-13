@@ -1,0 +1,34 @@
+import Ember from 'ember';
+
+export default Ember.Controller.extend({
+	
+	selectedEventIndex: 0,
+
+	selectedEvent: function(){
+		return this.get("model").objectAt(this.get("selectedEventIndex"));
+	}.property("selectedEventIndex","model"),
+
+	actions: {
+		
+		goPrevious: function(){
+			var idx = this.get("selectedEventIndex");
+			var modelLength = this.get("model.length");
+			if(idx > 0){
+				this.set("selectedEventIndex",idx--);
+			} else {
+				this.set("selectedEventIndex", modelLength)
+			}		
+		},
+
+		goNext: function(){
+			var idx = this.get("selectedEventIndex");
+			var modelLength = this.get("model.length");
+			if(idx < modelLength){
+				this.set("selectedEventIndex",idx++);
+			} else {
+				this.set("selectedEventIndex",0);
+			}	 	
+		},
+	}
+
+});

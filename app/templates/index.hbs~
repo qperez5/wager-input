@@ -1,0 +1,1 @@
+{{wager-input event=selectedEvent onGoLeft='goPrevious' onGoRight='goNext'}}

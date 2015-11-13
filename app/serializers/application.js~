@@ -1,0 +1,17 @@
+import DS from 'ember-data';
+
+export default DS.RESTSerializer.extend({
+	
+	normalizeHash: {
+		events: function(hashEvent){
+				var originalSelections = hashEvent.selections;
+				hashEvent.selections = [];
+				originalSelections.forEach(function(item,index,enumerable){
+					hashEvent.selections.pushObject(item.id);
+				});
+				return hashEvent; 
+		}
+		
+	}
+
+});

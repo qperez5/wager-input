@@ -1,0 +1,24 @@
+        <div class="widget">
+            <div class="logo">
+                <a><img src="assets/images/logo.png"></a> 
+            </div>
+            <img src="assets/images/left.png" class="arrow left" {{action 'left'}}> 
+            <div class="content">
+                <div class="inner first active">
+                    <div class="h2">{{eventName}}</div>
+                    <div class="h4">Correct Score</div>
+                    <input type="number" value={{scoreHome}}> 
+                    <div class="spinner">
+                        <div class="up" {{action 'homeUp'}}>&#9650;</div>
+                        <div class="down" {{action 'homeDown'}}>&#9660;</div>
+                    </div>
+                    <input type="number" value={{scoreAway}}> 
+                    <div class="spinner">
+                        <div class="spinner up" {{action 'awayUp'}}>&#9650;</div>
+                        <div class="spinner down" {{action 'awayeUp'}}>&#9660;</div>
+                    </div>
+                    <a class="btn btn-yellow" href="#">Bet £10 win £{{price}}</a> 
+                </div>
+            </div>
+            <img src="assets/images/right.png" class="arrow right" {{action 'right'}}> 
+        </div>
